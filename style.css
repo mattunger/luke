@@ -1,7 +1,65 @@
-/* --- NEW NAV BUTTON STYLES --- */
+/* =========================================
+   BASE STYLES & SPACE BACKGROUND
+   ========================================= */
+body {
+    background-color: #0b0c10;
+    /* This creates the starry space background using radial gradients */
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    
+    color: #66fcf1;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Keeps rockets from stretching the screen */
+}
+
+.container {
+    flex-grow: 1;
+    padding-top: 30px;
+}
+
+h1 {
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #45a29e;
+}
+
+#message {
+    margin-top: 20px;
+    color: #ffb703;
+}
+
+/* =========================================
+   BUTTONS & LINKS
+   ========================================= */
+button {
+    background-color: #45a29e;
+    color: #0b0c10;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(102, 252, 241, 0.5);
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #66fcf1;
+}
+
 .nav-button {
     display: inline-block;
-    background-color: #ffb703; /* Bright yellow */
+    background-color: #ffb703; 
     color: #0b0c10;
     text-decoration: none;
     padding: 15px 30px;
@@ -18,11 +76,99 @@
     background-color: #ffc300;
 }
 
-/* --- SOLAR SYSTEM & ORBITS --- */
+/* =========================================
+   PAGE 1: MARS PLANET & DINOSAURS
+   ========================================= */
+.planet-ground.mars {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    /* Red-orange gradient for Mars */
+    background-image: linear-gradient(to top, #A52A2A, #D2691E);
+    border-top-left-radius: 50% 100px;
+    border-top-right-radius: 50% 100px;
+    overflow: visible; 
+}
+
+/* Craters */
+.crater {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50% / 10px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.cr1 { width: 60px; height: 35px; top: 30px; left: 15%; }
+.cr2 { width: 40px; height: 25px; top: 60px; left: 60%; }
+.cr3 { width: 80px; height: 45px; top: 80px; left: 35%; }
+.cr4 { width: 50px; height: 30px; top: 20px; right: 10%; }
+
+/* Trees & Bird Dinos */
+.tree-area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.tree {
+    position: absolute;
+    bottom: 0px;
+    font-size: 70px;
+}
+
+.tree-group {
+    position: absolute;
+    bottom: -10px; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    font-size: 70px;
+}
+
+.tl1 { left: 5%; font-size: 60px; }
+.tl2 { left: 30%; bottom: 10px; font-size: 70px; }
+.tl3 { right: 5%; font-size: 60px; }
+
+.bird-dino {
+    font-size: 35px;
+    margin-bottom: 25px; 
+}
+
+/* Main Standing Dinos */
+.dino-standing-area {
+    position: absolute;
+    top: -40px; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 90px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    z-index: 2; 
+}
+
+.dino {
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.dino:hover {
+    transform: scale(1.3);
+}
+
+/* =========================================
+   PAGE 2: SOLAR SYSTEM ORBITS
+   ========================================= */
 .solar-system {
     position: relative;
     width: 100%;
-    height: 500px; /* Gives enough space for the orbits */
+    height: 500px;
     margin-top: 40px;
 }
 
@@ -43,7 +189,6 @@
     left: 50%;
     border: 2px dashed rgba(255, 255, 255, 0.2);
     border-radius: 50%;
-    /* This animation spins the entire dashed circle */
     animation: spin linear infinite; 
 }
 
@@ -54,41 +199,40 @@
     left: 50%;
     width: 50px;
     height: 50px;
-    margin-top: -25px; /* Centers it on the dashed line */
+    margin-top: -25px; 
     margin-left: -25px;
 }
 
-/* The planet emojis */
 .planet {
     font-size: 40px;
     position: absolute;
     top: 5px;
     left: 5px;
-    /* Spins the opposite way so the emoji stays upright! */
+    /* Spins opposite so the emoji stays upright */
     animation: counter-spin linear infinite; 
 }
 
-/* Earth Specifics */
+/* Earth */
 .earth-orbit {
     width: 260px;
     height: 260px;
     margin-top: -130px;
     margin-left: -130px;
-    animation-duration: 12s; /* Earth takes 12s to orbit */
+    animation-duration: 12s; 
 }
 .earth { animation-duration: 12s; }
 
-/* Mars Specifics */
+/* Mars */
 .mars-orbit {
     width: 400px;
     height: 400px;
     margin-top: -200px;
     margin-left: -200px;
-    animation-duration: 18s; /* Mars takes longer to orbit */
+    animation-duration: 18s; 
 }
 .mars { animation-duration: 18s; }
 
-/* Moon Orbits */
+/* Moons */
 .moon-orbit {
     position: absolute;
     top: 50%;
@@ -106,7 +250,7 @@
     margin-left: -10px;
 }
 
-/* Earth's single moon */
+/* Earth's moon */
 .earth-orbit .moon-orbit {
     width: 90px;
     height: 90px;
@@ -115,7 +259,7 @@
     animation-duration: 3s;
 }
 
-/* Mars' two tiny moons */
+/* Mars' two moons */
 .moon1-orbit {
     width: 80px;
     height: 80px;
@@ -136,7 +280,9 @@
     margin-left: -7px;
 }
 
-/* --- THE SPINNING ANIMATIONS --- */
+/* =========================================
+   ANIMATION KEYFRAMES
+   ========================================= */
 @keyframes spin {
     100% { transform: rotate(360deg); }
 }
