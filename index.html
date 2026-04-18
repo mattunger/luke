@@ -3,19 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luke's Space Dino Adventure</title>
+    <title>Luke's Mars Dino Adventure</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>🚀 Hello world. This is Luke. 🦖</h1>
-        <p>Welcome to my galaxy of Space Dinosaurs!</p>
+        <p>Welcome to my galaxy of Space Dinosaurs on Mars!</p>
         
         <button onclick="launch()">Launch Rocket!</button>
         <h2 id="message"></h2>
     </div>
 
-    <div class="planet-ground">
+    <div class="planet-ground mars">
+        
+        <div class="craters-area">
+            <div class="crater cr1"></div>
+            <div class="crater cr2"></div>
+            <div class="crater cr3"></div>
+            <div class="crater cr4"></div>
+        </div>
+
+        <div class="tree-area">
+            <div class="tree-group tl1">
+                <span class="tree-top">🌲</span>
+                <span class="bird-dino">🦅</span>
+                <span class="tree-top">🌲</span>
+            </div>
+            <div class="tree tl2">
+                <span class="tree-top">🌲</span>
+            </div>
+            <div class="tree-group tl3">
+                <span class="bird-dino">🦅</span>
+                <span class="tree-top">🌲</span>
+                <span class="tree-top">🌲</span>
+            </div>
+        </div>
+
         <div class="dino-standing-area">
             <span class="dino" onclick="roar()">🦕</span>
             <span class="dino" onclick="roar()">🦖</span>
