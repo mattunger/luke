@@ -105,33 +105,35 @@ button:hover {
 .cr3 { width: 80px; height: 45px; top: 80px; left: 35%; }
 .cr4 { width: 50px; height: 30px; top: 20px; right: 10%; }
 
-/* Trees & Bird Dinos */
+/* --- TREES & BIRD DINOS --- */
 .tree-area {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
+    z-index: 1; /* Keeps them just behind your main standing dinos */
 }
 
 .tree {
     position: absolute;
-    bottom: 0px;
+    top: -60px; /* Pushes the tree UP to sit on the planet surface */
     font-size: 70px;
 }
 
 .tree-group {
     position: absolute;
-    bottom: -10px; 
+    top: -60px; /* Pushes the group UP */
     display: flex;
     justify-content: center;
     align-items: flex-end; 
     font-size: 70px;
 }
 
-.tl1 { left: 5%; font-size: 60px; }
-.tl2 { left: 30%; bottom: 10px; font-size: 70px; }
-.tl3 { right: 5%; font-size: 60px; }
+/* Specific positions adjusted to follow the rounded curve of Mars */
+.tl1 { left: 5%; top: -40px; font-size: 60px; } 
+.tl2 { left: 30%; top: -65px; font-size: 70px; }
+.tl3 { right: 5%; top: -40px; font-size: 60px; }
 
 .bird-dino {
     font-size: 35px;
