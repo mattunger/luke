@@ -290,3 +290,62 @@ button:hover {
 @keyframes counter-spin {
     100% { transform: rotate(-360deg); }
 }
+
+/* =========================================
+   PAGE 3: INTERNATIONAL SPACE STATION
+   ========================================= */
+.space-view {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden; /* Keeps the giant Earth from stretching the page down */
+}
+
+/* A massive Earth that sits at the bottom of the screen */
+.earth-below {
+    position: absolute;
+    bottom: -350px; /* Hides the bottom half of the emoji */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 600px; /* Makes the emoji huge */
+    animation: spin 60s linear infinite; /* Very slow rotation */
+    z-index: 1;
+    opacity: 0.9;
+}
+
+/* The container holding the ISS and Dino */
+.iss-container {
+    position: absolute;
+    top: 20%;
+    left: -200px; /* Starts off-screen to the left */
+    font-size: 100px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Two animations: one moves it left-to-right, one makes it bob up and down */
+    animation: fly-across 20s linear infinite, float-up-down 4s ease-in-out infinite alternate;
+}
+
+/* The floating astronaut dinosaur */
+.astro-dino {
+    font-size: 50px;
+    cursor: pointer;
+    /* Bobs up and down slightly out of sync with the ISS */
+    animation: float-up-down 3s ease-in-out infinite alternate-reverse;
+}
+
+/* --- ISS KEYFRAMES --- */
+/* Moves the station from the far left to the far right of the screen */
+@keyframes fly-across {
+    0% { left: -250px; }
+    100% { left: 100vw; }
+}
+
+/* Creates a gentle hovering/bobbing effect */
+@keyframes float-up-down {
+    0% { transform: translateY(-20px); }
+    100% { transform: translateY(20px); }
+}
